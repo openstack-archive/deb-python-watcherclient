@@ -1,4 +1,4 @@
-python-watcherclient (0.23.0-1) unstable; urgency=medium
+python-watcherclient (0.23.0-1) experimental; urgency=medium
 
   * Initial release. (Closes: #826852)
 
