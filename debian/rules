@@ -42,7 +42,7 @@ endif
 
 override_dh_sphinxdoc:
 ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
-	sphinx-build -b html doc/source $(CURDIR)/debian/python-watcherclient/usr/share/doc/python-watcherclient/html
+	PYTHONPATH=. sphinx-build -b html doc/source $(CURDIR)/debian/python-watcherclient/usr/share/doc/python-watcherclient/html
 	dh_sphinxdoc -O--buildsystem=python_distutils
 endif
 
