@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "remove" ] ; then
+	update-alternatives --remove watcher /usr/bin/python3-watcher
+fi
+
+#DEBHELPER#
+
+exit 0

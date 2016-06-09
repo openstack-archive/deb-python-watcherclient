@@ -1,0 +1,103 @@
+Source: python-watcherclient
+Section: python
+Priority: optional
+Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders: Thomas Goirand <zigo@debian.org>,
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               openstack-pkg-tools,
+               python-all,
+               python-pbr (>= 1.8),
+               python-setuptools,
+               python-sphinx,
+               python3-all,
+               python3-pbr (>= 1.8),
+               python3-setuptools,
+Build-Depends-Indep: python-babel (>= 2.3.4),
+                     python-cliff (>= 1.15.0),
+                     python-coverage,
+                     python-hacking,
+                     python-keystoneclient (>= 1.6.0),
+                     python-mock (>= 1.3),
+                     python-openstackclient (>= 2.1.0),
+                     python-oslo.i18n (>= 2.1.0),
+                     python-oslo.utils (>= 3.5.0),
+                     python-oslosphinx,
+                     python-oslotest (>= 1.10.0),
+                     python-prettytable (>= 0.7),
+                     python-six (>= 1.9.0),
+                     python-tempest-lib (>= 0.14.0),
+                     python-testscenarios,
+                     python-testtools (>= 1.4.0),
+                     python3-babel (>= 2.3.4),
+                     python3-cliff (>= 1.15.0),
+                     python3-coverage,
+                     python3-hacking,
+                     python3-keystoneclient (>= 1.6.0),
+                     python3-mock (>= 1.3),
+                     python3-openstackclient (>= 2.1.0),
+                     python3-oslo.i18n (>= 2.1.0),
+                     python3-oslo.utils (>= 3.5.0),
+                     python3-oslotest (>= 1.10.0),
+                     python3-prettytable (>= 0.7),
+                     python3-six (>= 1.9.0),
+                     python3-subunit,
+                     python3-tempest-lib (>= 0.14.0),
+                     python3-testscenarios,
+                     python3-testtools (>= 1.4.0),
+                     subunit,
+                     testrepository,
+Standards-Version: 3.9.8
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=openstack/python-watcherclient.git
+Vcs-Git: https://anonscm.debian.org/git/openstack/python-watcherclient.git
+Homepage: https://github.com/openstack/python-watcherclient
+
+Package: python-watcherclient
+Architecture: all
+Depends: python-babel (>= 2.3.4),
+         python-cliff (>= 1.15.0),
+         python-keystoneclient (>= 1.6.0),
+         python-openstackclient (>= 2.1.0),
+         python-oslo.i18n (>= 2.1.0),
+         python-oslo.utils (>= 3.5.0),
+         python-pbr (>= 1.8),
+         python-prettytable (>= 0.7),
+         python-six (>= 1.9.0),
+         ${misc:Depends},
+         ${python:Depends},
+Description: OpenStack Cloud Optimization as a Service client - Python 2.7
+ OpenStack Watcher provides a flexible and scalable resource optimization
+ service for multi-tenant OpenStack-based clouds. Watcher provides a complete
+ optimization loop-including everything from a metrics receiver, complex event
+ processor and profiler, optimization processor and an action plan applier.
+ This provides a robust framework to realize a wide range of cloud optimization
+ goals, including the reduction of data center operating costs, increased
+ system performance via intelligent virtual machine migration, increased energy
+ efficiency-and more!
+ .
+ This package contains the Python 2.7 module and the Watcher CLI.
+
+Package: python3-watcherclient
+Architecture: all
+Depends: python3-babel (>= 2.3.4),
+         python3-cliff (>= 1.15.0),
+         python3-keystoneclient (>= 1.6.0),
+         python3-openstackclient (>= 2.1.0),
+         python3-oslo.i18n (>= 2.1.0),
+         python3-oslo.utils (>= 3.5.0),
+         python3-pbr (>= 1.8),
+         python3-prettytable (>= 0.7),
+         python3-six (>= 1.9.0),
+         ${misc:Depends},
+         ${python3:Depends},
+Description: OpenStack Cloud Optimization as a Service client - Python 3.x
+ OpenStack Watcher provides a flexible and scalable resource optimization
+ service for multi-tenant OpenStack-based clouds. Watcher provides a complete
+ optimization loop-including everything from a metrics receiver, complex event
+ processor and profiler, optimization processor and an action plan applier.
+ This provides a robust framework to realize a wide range of cloud optimization
+ goals, including the reduction of data center operating costs, increased
+ system performance via intelligent virtual machine migration, increased energy
+ efficiency-and more!
+ .
+ This package contains the Python 3.x module and the Watcher CLI.
