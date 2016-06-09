@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "remove" ] || [ "$1" = "disappear" ] ; then
-	update-alternatives --remove barbican /usr/bin/python2-barbican
+	update-alternatives --remove watcher /usr/bin/python2-watcher
 fi
 
 #DEBHELPER#

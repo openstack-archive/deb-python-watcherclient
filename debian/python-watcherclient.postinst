@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "configure" ] ; then
-	update-alternatives --install /usr/bin/barbican barbican /usr/bin/python2-barbican 300
+	update-alternatives --install /usr/bin/watcher watcher /usr/bin/python2-watcher 300
 fi
 
 #DEBHELPER#
