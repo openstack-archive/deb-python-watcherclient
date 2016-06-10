@@ -1,0 +1,9 @@
+Document: python-watcherclient-doc
+Title: python-watcherclient Documentation
+Author: N/A
+Abstract: Sphinx documentation for python-watcherclient
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-watcherclient-doc/html/index.html
+Files: /usr/share/doc/python-watcherclient-doc/html/*
