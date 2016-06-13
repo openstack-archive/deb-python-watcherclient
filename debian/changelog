@@ -1,6 +1,7 @@
 python-watcherclient (0.23.0-2) experimental; urgency=medium
 
   * Added missing (c) 2016 b<>com in debian/copyright.
+  * Added override to do: dh_python3 --shebang=/usr/bin/python3.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 13 Jun 2016 09:07:25 +0000
 
