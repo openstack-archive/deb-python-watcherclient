@@ -3,7 +3,18 @@ Upstream-Name: python-watcherclient
 Source: https://github.com/openstack/python-watcherclient
 
 Files: *
-Copyright: (c) 2013-2016, OpenStack Foundation <openstack-dev@lists.openstack.org>
+Copyright: (c) 2011-2016, OpenStack Foundation <openstack-dev@lists.openstack.org>
+           (c) 2013, Rackspace, Inc.
+           (c) 2013-2014, Hewlett-Packard Development Company, L.P.
+           (c) 2010, Jacob Kaplan-Moss
+           (c) 2012, Grid Dynamics
+           (c) 2013, Red Hat, Inc.
+           (c) 2013, IBM Corp
+           (c) 2013, Alessio Ababilov
+           (c) 2010, Jacob Kaplan-Moss
+           (c) 2011, Nebula, Inc.
+           (c) 2014, The Cloudscaling Group, Inc.
+           (c) 2016, NEC Corporation
 License: Apache-2
 
 Files: debian/*
