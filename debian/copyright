@@ -15,6 +15,7 @@ Copyright: (c) 2011-2016, OpenStack Foundation <openstack-dev@lists.openstack.or
            (c) 2011, Nebula, Inc.
            (c) 2014, The Cloudscaling Group, Inc.
            (c) 2016, NEC Corporation
+           (c) 2016, b<>com
 License: Apache-2
 
 Files: debian/*
