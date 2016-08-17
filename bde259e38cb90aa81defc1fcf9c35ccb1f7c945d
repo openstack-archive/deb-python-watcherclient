@@ -1,0 +1,9 @@
+Code-Review+2: David TARDIVEL <David.TARDIVEL@b-com.com>
+Code-Review+2: Vincent Françoise <Vincent.FRANCOISE@b-com.com>
+Workflow+1: Vincent Françoise <Vincent.FRANCOISE@b-com.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 07 Jul 2016 15:13:45 +0000
+Reviewed-on: https://review.openstack.org/297557
+Project: openstack/deb-python-watcherclient
+Branch: refs/heads/master
