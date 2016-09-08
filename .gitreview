@@ -1,4 +1,5 @@
 [gerrit]
 host=review.openstack.org
 port=29418
-project=openstack/python-watcherclient.git
+project=openstack/deb-python-watcherclient.git
+defaultbranch=debian/newton
