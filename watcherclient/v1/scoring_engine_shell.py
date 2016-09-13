@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# Copyright (c) 2016 b<>com
+# Copyright (c) 2016 Intel
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,15 +23,15 @@ from watcherclient import exceptions
 from watcherclient.v1 import resource_fields as res_fields
 
 
-class ShowAction(command.ShowOne):
-    """Show detailed information about a given action."""
+class ShowScoringEngine(command.ShowOne):
+    """Show detailed information about a given scoring engine."""
 
     def get_parser(self, prog_name):
-        parser = super(ShowAction, self).get_parser(prog_name)
+        parser = super(ShowScoringEngine, self).get_parser(prog_name)
         parser.add_argument(
-            'action',
-            metavar='<action>',
-            help=_('UUID of the action'),
+            'scoring_engine',
+            metavar='<scoring_engine>',
+            help=_('Name of the scoring engine'),
         )
         return parser
 
@@ -39,35 +39,29 @@ class ShowAction(command.ShowOne):
         client = getattr(self.app.client_manager, "infra-optim")
 
         try:
-            action = client.action.get(parsed_args.action)
+            scoring_engine = client.scoring_engine.get(
+                parsed_args.scoring_engine)
         except exceptions.HTTPNotFound as exc:
             raise exceptions.CommandError(str(exc))
 
-        columns = res_fields.ACTION_FIELDS
-        column_headers = res_fields.ACTION_FIELD_LABELS
+        columns = res_fields.SCORING_ENGINE_FIELDS
+        column_headers = res_fields.SCORING_ENGINE_FIELD_LABELS
 
-        return column_headers, utils.get_item_properties(action, columns)
+        return column_headers, utils.get_item_properties(scoring_engine,
+                                                         columns)
 
 
-class ListAction(command.Lister):
-    """List information on retrieved actions."""
+class ListScoringEngine(command.Lister):
+    """List information on retrieved scoring engines."""
 
     def get_parser(self, prog_name):
-        parser = super(ListAction, self).get_parser(prog_name)
-        parser.add_argument(
-            '--action-plan',
-            metavar='<action-plan>',
-            help=_('UUID of the action plan used for filtering.'))
-        parser.add_argument(
-            '--audit',
-            metavar='<audit>',
-            help=_(' UUID of the audit used for filtering.'))
+        parser = super(ListScoringEngine, self).get_parser(prog_name)
         parser.add_argument(
             '--detail',
             dest='detail',
             action='store_true',
             default=False,
-            help=_("Show detailed information about actions."))
+            help=_("Show detailed information about scoring engines."))
         parser.add_argument(
             '--limit',
             metavar='<limit>',
@@ -91,23 +85,19 @@ class ListAction(command.Lister):
         client = getattr(self.app.client_manager, "infra-optim")
 
         params = {}
-        if parsed_args.action_plan is not None:
-            params['action_plan'] = parsed_args.action_plan
-        if parsed_args.audit is not None:
-            params['audit'] = parsed_args.audit
         if parsed_args.detail:
-            fields = res_fields.ACTION_FIELDS
-            field_labels = res_fields.ACTION_FIELD_LABELS
+            fields = res_fields.SCORING_ENGINE_FIELDS
+            field_labels = res_fields.SCORING_ENGINE_FIELD_LABELS
         else:
-            fields = res_fields.ACTION_SHORT_LIST_FIELDS
-            field_labels = res_fields.ACTION_SHORT_LIST_FIELD_LABELS
+            fields = res_fields.SCORING_ENGINE_SHORT_LIST_FIELDS
+            field_labels = res_fields.SCORING_ENGINE_SHORT_LIST_FIELD_LABELS
 
         params.update(
             common_utils.common_params_for_list(
                 parsed_args, fields, field_labels))
 
         try:
-            data = client.action.list(**params)
+            data = client.scoring_engine.list(**params)
         except exceptions.HTTPNotFound as ex:
             raise exceptions.CommandError(str(ex))
 

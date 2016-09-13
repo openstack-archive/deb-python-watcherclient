@@ -14,7 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from openstackclient.common import utils
+import json
+from osc_lib import utils
 
 from watcherclient._i18n import _
 from watcherclient.common import command
@@ -35,6 +36,13 @@ class ShowStrategy(command.ShowOne):
         )
         return parser
 
+    def _format_spec(self, strategy):
+        parameters_spec = strategy.parameters_spec.get('properties')
+        if parameters_spec:
+            return json.dumps(parameters_spec, indent=2)
+
+        return {}
+
     def take_action(self, parsed_args):
         client = getattr(self.app.client_manager, "infra-optim")
 
@@ -43,6 +51,7 @@ class ShowStrategy(command.ShowOne):
         except exceptions.HTTPNotFound as exc:
             raise exceptions.CommandError(str(exc))
 
+        strategy.parameters_spec = self._format_spec(strategy)
         columns = res_fields.STRATEGY_FIELDS
         column_headers = res_fields.STRATEGY_FIELD_LABELS
 

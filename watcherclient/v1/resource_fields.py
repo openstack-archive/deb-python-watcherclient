@@ -34,28 +34,35 @@ AUDIT_TEMPLATE_SHORT_LIST_FIELD_LABELS = ['UUID', 'Name', 'Goal', 'Strategy']
 
 # Audit
 AUDIT_FIELDS = ['uuid', 'created_at', 'updated_at', 'deleted_at',
-                'deadline', 'state', 'type', 'audit_template_uuid',
-                'audit_template_name']
+                'deadline', 'state', 'audit_type',
+                'parameters', 'interval',
+                'host_aggregate', 'goal_name', 'strategy_name']
 
 AUDIT_FIELD_LABELS = ['UUID', 'Created At', 'Updated At', 'Deleted At',
-                      'Deadline', 'State', 'Type', 'Audit Template uuid',
-                      'Audit Template Name']
+                      'Deadline', 'State', 'Audit Type',
+                      'Parameters', 'Interval', 'Host Aggregate ID or Name',
+                      'Goal', 'Strategy']
 
-AUDIT_SHORT_LIST_FIELDS = ['uuid', 'type', 'audit_template_name', 'state']
+AUDIT_SHORT_LIST_FIELDS = ['uuid', 'audit_type',
+                           'state', 'goal_name', 'strategy_name']
 
-AUDIT_SHORT_LIST_FIELD_LABELS = ['UUID', 'Type', 'Audit Template Name',
-                                 'State']
+AUDIT_SHORT_LIST_FIELD_LABELS = ['UUID', 'Audit Type', 'State', 'Goal',
+                                 'Strategy']
 
 # Action Plan
 ACTION_PLAN_FIELDS = ['uuid', 'created_at', 'updated_at', 'deleted_at',
-                      'audit_uuid', 'state']
+                      'audit_uuid', 'strategy_name', 'state',
+                      'efficacy_indicators', 'global_efficacy']
 
 ACTION_PLAN_FIELD_LABELS = ['UUID', 'Created At', 'Updated At', 'Deleted At',
-                            'Audit', 'State']
+                            'Audit', 'Strategy', 'State',
+                            'Efficacy indicators', 'Global efficacy']
 
-ACTION_PLAN_SHORT_LIST_FIELDS = ['uuid', 'audit_uuid', 'state', 'updated_at']
+ACTION_PLAN_SHORT_LIST_FIELDS = ['uuid', 'audit_uuid', 'state',
+                                 'updated_at', 'global_efficacy']
 
-ACTION_PLAN_SHORT_LIST_FIELD_LABELS = ['UUID', 'Audit', 'State', 'Updated At']
+ACTION_PLAN_SHORT_LIST_FIELD_LABELS = ['UUID', 'Audit', 'State',
+                                       'Updated At', 'Global efficacy']
 
 # Action
 ACTION_FIELDS = ['uuid', 'created_at', 'updated_at', 'deleted_at', 'next_uuid',
@@ -73,9 +80,9 @@ ACTION_SHORT_LIST_FIELD_LABELS = ['UUID', 'Next Action', 'State',
                                   'Action Plan', 'Action']
 # Goals
 
-GOAL_FIELDS = ['uuid', 'name', 'display_name']
+GOAL_FIELDS = ['uuid', 'name', 'display_name', 'efficacy_specification']
 
-GOAL_FIELD_LABELS = ['UUID', 'Name', 'Display name']
+GOAL_FIELD_LABELS = ['UUID', 'Name', 'Display name', 'Efficacy specification']
 
 GOAL_SHORT_LIST_FIELDS = ['uuid', 'name', 'display_name']
 
@@ -83,14 +90,15 @@ GOAL_SHORT_LIST_FIELD_LABELS = ['UUID', 'Name', 'Display name']
 
 # Strategies
 
-STRATEGY_FIELDS = ['uuid', 'name', 'display_name', 'goal_uuid']
+STRATEGY_FIELDS = ['uuid', 'name', 'display_name', 'goal_name',
+                   'parameters_spec']
 
-STRATEGY_FIELD_LABELS = ['UUID', 'Name', 'Display name', 'Goal UUID']
+STRATEGY_FIELD_LABELS = ['UUID', 'Name', 'Display name', 'Goal',
+                         'Parameters spec']
 
-STRATEGY_SHORT_LIST_FIELDS = ['uuid', 'name', 'display_name', 'goal_uuid']
+STRATEGY_SHORT_LIST_FIELDS = ['uuid', 'name', 'display_name', 'goal_name']
 
-STRATEGY_SHORT_LIST_FIELD_LABELS = ['UUID', 'Name', 'Display name',
-                                    'Goal UUID']
+STRATEGY_SHORT_LIST_FIELD_LABELS = ['UUID', 'Name', 'Display name', 'Goal']
 
 # Metric Collector
 METRIC_COLLECTOR_FIELDS = ['uuid', 'created_at', 'updated_at', 'deleted_at',
@@ -104,3 +112,9 @@ METRIC_COLLECTOR_SHORT_LIST_FIELDS = ['uuid', 'endpoint', 'category']
 
 METRIC_COLLECTOR_SHORT_LIST_FIELD_LABELS = ['UUID', 'Endpoint URL',
                                             'Metric Category']
+# Scoring Engines
+SCORING_ENGINE_FIELDS = ['uuid', 'name', 'description', 'metainfo']
+SCORING_ENGINE_FIELD_LABELS = ['UUID', 'Name', 'Description', 'Metainfo']
+
+SCORING_ENGINE_SHORT_LIST_FIELDS = ['uuid', 'name', 'description']
+SCORING_ENGINE_SHORT_LIST_FIELD_LABELS = ['UUID', 'Name', 'Description']

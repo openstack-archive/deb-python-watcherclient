@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2013 Red Hat, Inc.
+# Copyright 2016 Intel
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
@@ -16,37 +16,29 @@
 
 from watcherclient.common import base
 from watcherclient.common import utils
-from watcherclient import exceptions as exc
 
 
-CREATION_ATTRIBUTES = ['audit_template_uuid', 'host_aggregate',
-                       'deadline', 'audit_type', 'interval',
-                       'goal', 'strategy']
-
-
-class Audit(base.Resource):
+class ScoringEngine(base.Resource):
     def __repr__(self):
-        return "<Audit %s>" % self._info
+        return "<ScoringEngine %s>" % self._info
 
 
-class AuditManager(base.Manager):
-    resource_class = Audit
+class ScoringEngineManager(base.Manager):
+    resource_class = ScoringEngine
 
     @staticmethod
-    def _path(id=None):
-        return '/v1/audits/%s' % id if id else '/v1/audits'
+    def _path(scoring_engine=None):
+        return ('/v1/scoring_engines/%s' % scoring_engine
+                if scoring_engine else '/v1/scoring_engines')
 
-    def list(self, audit_template=None, limit=None, sort_key=None,
-             sort_dir=None, detail=False):
-        """Retrieve a list of audit.
+    def list(self, limit=None, sort_key=None, sort_dir=None, detail=False):
+        """Retrieve a list of scoring engines.
 
-        :param audit_template: Name of the audit
-        :param name: Name of the audit
         :param limit: The maximum number of results to return per
                       request, if:
 
-            1) limit > 0, the maximum number of audits to return.
-            2) limit == 0, return the entire list of audits.
+            1) limit > 0, the maximum number of scoring engines to return.
+            2) limit == 0, return the entire list of scoring engines.
             3) limit param is NOT specified (None), the number of items
                returned respect the maximum imposed by the Watcher API
                (see Watcher's api.max_limit option).
@@ -57,17 +49,15 @@ class AuditManager(base.Manager):
                          default) or 'desc'.
 
         :param detail: Optional, boolean whether to return detailed information
-                       about audits.
+                       about scoring engines.
 
-        :returns: A list of audits.
+        :returns: A list of scoring engines.
 
         """
         if limit is not None:
             limit = int(limit)
 
         filters = utils.common_filters(limit, sort_key, sort_dir)
-        if audit_template is not None:
-            filters.append('audit_template=%s' % audit_template)
 
         path = ''
         if detail:
@@ -76,28 +66,13 @@ class AuditManager(base.Manager):
             path += '?' + '&'.join(filters)
 
         if limit is None:
-            return self._list(self._path(path), "audits")
+            return self._list(self._path(path), "scoring_engines")
         else:
-            return self._list_pagination(self._path(path), "audits",
+            return self._list_pagination(self._path(path), "scoring_engines",
                                          limit=limit)
 
-    def create(self, **kwargs):
-        new = {}
-        for (key, value) in kwargs.items():
-            if key in CREATION_ATTRIBUTES:
-                new[key] = value
-            else:
-                raise exc.InvalidAttribute()
-        return self._create(self._path(), new)
-
-    def get(self, audit_id):
+    def get(self, scoring_engine_name):
         try:
-            return self._list(self._path(audit_id))[0]
+            return self._list(self._path(scoring_engine_name))[0]
         except IndexError:
             return None
-
-    def delete(self, audit_id):
-        return self._delete(self._path(audit_id))
-
-    def update(self, audit_id, patch):
-        return self._update(self._path(audit_id), patch)
