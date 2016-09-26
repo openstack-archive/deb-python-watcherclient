@@ -48,8 +48,8 @@ Build-Depends-Indep: python-babel (>= 2.3.4),
                      subunit,
                      testrepository,
 Standards-Version: 3.9.8
-Vcs-Browser: https://anonscm.debian.org/gitweb/?p=openstack/python-watcherclient
-Vcs-Git: https://git.openstack.org/openstack/deb-python-watcherclient
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=openstack/python-watcherclient?h=debian%2Fnewton
+Vcs-Git: https://git.openstack.org/openstack/deb-python-watcherclient -b debian/newton
 Homepage: https://github.com/openstack/python-watcherclient
 
 Package: python-watcherclient
