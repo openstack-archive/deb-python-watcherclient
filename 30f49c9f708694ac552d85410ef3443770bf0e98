@@ -1,0 +1,9 @@
+Code-Review+2: Hidekazu Nakamura <hid-nakamura@vf.jp.nec.com>
+Code-Review+2: Vincent Françoise <Vincent.FRANCOISE@b-com.com>
+Workflow+1: Vincent Françoise <Vincent.FRANCOISE@b-com.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 11 May 2017 14:05:54 +0000
+Reviewed-on: https://review.openstack.org/462128
+Project: openstack/deb-python-watcherclient
+Branch: refs/heads/master
