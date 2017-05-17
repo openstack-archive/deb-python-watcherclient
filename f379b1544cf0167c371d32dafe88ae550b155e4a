@@ -1,0 +1,9 @@
+Code-Review+2: Alexander Chadin <a.chadin@servionica.ru>
+Code-Review+2: Vincent Françoise <Vincent.FRANCOISE@b-com.com>
+Workflow+1: Vincent Françoise <Vincent.FRANCOISE@b-com.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 17 May 2017 15:02:41 +0000
+Reviewed-on: https://review.openstack.org/464484
+Project: openstack/deb-python-watcherclient
+Branch: refs/heads/master
