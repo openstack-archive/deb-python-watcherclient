@@ -1,0 +1,8 @@
+Code-Review+2: Hidekazu Nakamura <hid-nakamura@vf.jp.nec.com>
+Workflow+1: Alexander Chadin <a.chadin@servionica.ru>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 12 Jul 2017 13:43:26 +0000
+Reviewed-on: https://review.openstack.org/480636
+Project: openstack/deb-python-watcherclient
+Branch: refs/heads/master
