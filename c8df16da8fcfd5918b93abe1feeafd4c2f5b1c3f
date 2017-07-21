@@ -1,0 +1,11 @@
+Code-Review+2: Hidekazu Nakamura <hid-nakamura@vf.jp.nec.com>
+Code-Review+1: suzhengwei <sugar-2008@163.com>
+Code-Review+1: licanwei <li.canwei2@zte.com.cn>
+Workflow+1: YumengBao <bao.yumeng@zte.com.cn>
+Code-Review+2: YumengBao <bao.yumeng@zte.com.cn>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 21 Jul 2017 09:10:07 +0000
+Reviewed-on: https://review.openstack.org/473865
+Project: openstack/deb-python-watcherclient
+Branch: refs/heads/master
